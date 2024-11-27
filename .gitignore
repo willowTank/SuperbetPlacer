@@ -1,52 +1,16 @@
-# Prerequisites
-*.d
-
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
+packages
+Luncher/bin/Debug
+Luncher/bin/Release
+Luncher/obj
+NewBet365Leader/bin/Debug
+NewBet365Leader/bin/Release
+NewBet365Leader/obj
+NewBet365Leader/bin/Debug/Temp
+NewBet365Leader/bin/Debug/Cookies
+NewBet365Leader/bin/Release/Temp
+NewBet365Leader/bin/Release/Cookies
 *.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+/.vs
+/ChromeDevTools/bin
+/ChromeDevTools/obj
+/NewBet365Leader/bin

@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{536F7360-85C4-466D-B37C-D0E27C3AC3F4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FirefoxBet365Placer</RootNamespace>
+    <AssemblyName>Bet365</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>bet365.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MaterialSkin">
+      <HintPath>bin\Debug\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="Siticone.UI">
+      <HintPath>bin\Debug\Siticone.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants\Constants.cs" />
+    <Compile Include="Controller\BetController.cs" />
+    <Compile Include="Controller\BetUIController.cs" />
+    <Compile Include="Controller\FakeUserAction.cs" />
+    <Compile Include="Controller\FingerPrint.cs" />
+    <Compile Include="Controller\MyScheduler.cs" />
+    <Compile Include="Controller\SchedulerService.cs" />
+    <Compile Include="Controller\LiveSoccerSocktCnt.cs" />
+    <Compile Include="Controller\SocketConnector.cs" />
+    <Compile Include="Controller\WebsocketClient.cs" />
+    <Compile Include="Controller\WebsocketServer.cs" />
+    <Compile Include="Controller\Win32.cs" />
+    <Compile Include="CustomEndpoint.cs" />
+    <Compile Include="frmClickDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClickDlg.Designer.cs">
+      <DependentUpon>frmClickDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IOManager.cs" />
+    <Compile Include="Json\Account.cs" />
+    <Compile Include="Json\BetItem.cs" />
+    <Compile Include="Json\BrowserProfile.cs" />
+    <Compile Include="Json\EuAccount.cs" />
+    <Compile Include="Json\EuBetItem.cs" />
+    <Compile Include="Json\History\SoccerHistory.cs" />
+    <Compile Include="Json\HorseItem.cs" />
+    <Compile Include="Json\IPLocale.cs" />
+    <Compile Include="Json\MatchUpInfo.cs" />
+    <Compile Include="Json\OpenBet.cs" />
+    <Compile Include="Json\PlacedBet.cs" />
+    <Compile Include="Json\PlacedBetRunner.cs" />
+    <Compile Include="Json\Point.cs" />
+    <Compile Include="Json\RaceItem.cs" />
+    <Compile Include="Json\RelationData.cs" />
+    <Compile Include="Json\RequestDetail.cs" />
+    <Compile Include="Json\Ticket.cs" />
+    <Compile Include="Json\TicketBetItem.cs" />
+    <Compile Include="Setting.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGeneralSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGeneralSetting.Designer.cs">
+      <DependentUpon>frmGeneralSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClickDlg.resx">
+      <DependentUpon>frmClickDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGeneralSetting.resx">
+      <DependentUpon>frmGeneralSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="TriStateCheckBoxTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bet365.ico" />
+    <None Include="Image\website_96px.png" />
+    <None Include="Image\warning.png" />
+    <None Include="Image\username_idle.png" />
+    <None Include="Image\us_dollar_96px.png" />
+    <None Include="Image\us_dollar_32px.png" />
+    <None Include="Image\thema.png" />
+    <None Include="Image\success.png" />
+    <None Include="Image\Stop.png" />
+    <None Include="Image\Start.png" />
+    <None Include="Image\soccerbet.png" />
+    <None Include="Image\soccer.png" />
+    <None Include="Image\setting.png" />
+    <None Include="Image\percentage_96px.png" />
+    <None Include="Image\Pause.png" />
+    <None Include="Image\password_idle.png" />
+    <None Include="Image\order_history_96px.png" />
+    <None Include="Image\Ok.png" />
+    <None Include="Image\mozzart.png" />
+    <None Include="Image\modifyitem.png" />
+    <None Include="Image\Minimize.png" />
+    <None Include="Image\meridian.png" />
+    <None Include="Image\maxbet.png" />
+    <None Include="Image\logo.png" />
+    <None Include="Image\Log_Title.png" />
+    <None Include="Image\Load.png" />
+    <None Include="Image\increase %282%29.png" />
+    <None Include="Image\icons8_user_96px.png" />
+    <None Include="Image\icons8_play_24px.png" />
+    <None Include="Image\icons8_pause_24px.png" />
+    <None Include="Image\icons8_info_48px.png" />
+    <None Include="Image\icons8_close_window_24px.png" />
+    <None Include="Image\home.png" />
+    <None Include="Image\fingerprint_accepted_50px.png" />
+    <None Include="Image\fast-food.png" />
+    <None Include="Image\Exit.png" />
+    <None Include="Image\error.png" />
+    <None Include="Image\deleteitem.png" />
+    <None Include="Image\data-analytics.png" />
+    <None Include="Image\dafabet_logo.png" />
+    <None Include="Image\Close.png" />
+    <None Include="Image\clipboard.png" />
+    <None Include="Image\Cancel.png" />
+    <None Include="Image\bet365.png" />
+    <None Include="Image\admiral.png" />
+    <None Include="Image\additem.png" />
+    <None Include="Image\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="H.Socket.IO">
+      <Version>1.2.9</Version>
+    </PackageReference>
+    <PackageReference Include="HtmlAgilityPack">
+      <Version>1.11.34</Version>
+    </PackageReference>
+    <PackageReference Include="InputSimulator">
+      <Version>1.0.4</Version>
+    </PackageReference>
+    <PackageReference Include="ISO3166">
+      <Version>1.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="Macross.Json.Extensions">
+      <Version>2.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.WebUtilities">
+      <Version>2.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CSharp">
+      <Version>4.5.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging">
+      <Version>6.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies">
+      <Version>1.0.0</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Windows.SDK.Contracts">
+      <Version>10.0.19041.1</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.3</Version>
+    </PackageReference>
+    <PackageReference Include="PuppeteerExtraSharp">
+      <Version>2.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="SharpZipLib">
+      <Version>1.3.3</Version>
+    </PackageReference>
+    <PackageReference Include="System.ComponentModel.Annotations">
+      <Version>5.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Net.Http">
+      <Version>4.3.4</Version>
+    </PackageReference>
+    <PackageReference Include="System.Text.Json">
+      <Version>5.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="Telegram.Bot">
+      <Version>15.5.0</Version>
+    </PackageReference>
+    <PackageReference Include="websocket-sharp-customheaders">
+      <Version>1.0.2.31869</Version>
+    </PackageReference>
+    <PackageReference Include="WebSocket4Net">
+      <Version>0.15.2</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
